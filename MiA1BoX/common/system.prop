@@ -2,6 +2,9 @@
 # Example: Change dpi
 # ro.sf.lcd_density=320
 
+#Disable logcat
+logcat.live=disable
+
 # SMOOTH UI TWEAKS IS HERE ================================================//
 sys.use_fifo_ui=1
 debug.sf.latch_unsignaled=1
