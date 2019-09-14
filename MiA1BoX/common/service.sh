@@ -11,6 +11,10 @@ MODDIR=${0%/*}
 #WAIT TILL BOOT IS COMPLETE
 while true; do BOOT=$(getprop sys.boot_completed); if [ "$BOOT" -eq "1" ]; then sleep 12; break; else sleep 6; fi; done
 
+#Disable Commentary and spock app for MiA1
+su -c pm disable com.miui.spock
+su -c pm disable com.miui.bugreport
+
 #Change lockscreen shortcut
 su -c settings put secure sysui_keyguard_left org.thunderdog.challegram/org.thunderdog.challegram.MainActivity
 su -c settings put secure sysui_keyguard_right com.snapchat.android/com.snap.mushroom.MainActivity
@@ -25,5 +29,6 @@ su -c settings put secure icon_blacklist rotate
 
 #This will force gpu composition to avoid flickering
 while true; do SUFI=$(service list | grep -c "SurfaceFlinger"); if [ $SUFI -eq "1" ]; then sleep 12; break; else sleep 6; fi; done
+# su -c service call SurfaceFlinger 1008 i32 1
 su -c service call SurfaceFlinger 1008 i64 1
 
