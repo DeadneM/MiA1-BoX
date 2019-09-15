@@ -123,7 +123,7 @@ REPLACE="
 
 print_modname() {
   ui_print "*******************************"
-  ui_print "     MiA1 BoX Magisk Module    "
+  ui_print "     N6 BoX Magisk Module    "
   ui_print "*******************************"
 }
 
