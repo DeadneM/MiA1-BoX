@@ -1,0 +1,86 @@
+# This file will be read by resetprop
+# Example: Change dpi
+# ro.sf.lcd_density=320
+
+# SMOOTH UI TWEAKS IS HERE ================================================//
+sys.use_fifo_ui=1
+debug.sf.latch_unsignaled=1
+debug.sf.disable_backpressure=1
+
+# TOUCH IMPROVEMENTS IS HERE ==============================================//
+touch.deviceType=touchScreen
+touch.orientationAware=1
+touch.size.calibration=diameter
+touch.size.scale=1
+touch.size.bias=0
+touch.size.isSummed=0
+touch.pressure.calibration=amplitude
+touch.pressure.scale=0.001
+touch.orientation.calibration=none
+touch.distance.calibration=none
+touch.distance.scale=0
+touch.coverage.calibration=box
+touch.gestureMode=spots
+MultitouchSettleInterval=1ms
+MultitouchMinDistance=1px
+TapInterval=1ms
+TapSlop=1px1 
+
+# CAMERA TWEAKS IS HERE ===================================================//
+vendor.camera.aux.packagelist=com.bsgmod.camera,com.google.android.GoogleCameraWide,com.android.camera
+vendor.camera.aux.packagelist2=com.android.systemui
+camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp
+persist.camera.eis.enable=1
+persist.vendor.camera.eis.enable=1
+persist.camera.HAL3.enabled=1
+persist.vendor.camera.HAL3.enabled=1
+persist.vendor.camera.is_type=5
+persist.camera.is_type=5
+persist.vendor.camera.is_mode=5
+persist.camera.is_mode=5
+persist.camera.max.previewfps=60
+persist.vendor.camera.max.previewfps=60
+persist.camera.tnr_cds=1
+persist.vendor.camera.tnr_cds=1
+persist.camera.tnr.video=1
+persist.vendor.camera.tnr.video=1
+persist.camera.tnr.preview=1
+persist.vendor.camera.tnr.preview=1
+persist.camera.tnr.snapshot=1
+persist.vendor.camera.tnr.snapshot
+persist.camera.llnoise=1
+persist.vendor.camera.llnoise=1
+persist.tnr.process.plates=2
+persist.vendor.tnr.process.plates=2
+persist.denoise.process.plates=2
+persist.vendor.denoise.process.plates=2
+camera.lowpower.record.enable=1
+persist.camera.stats.test=5
+persist.vendor.camera.stats.test=5
+
+# VIDEO AND AUDIO TWEAKS IS HERE ==========================================//
+ro.config.media_vol_steps=50
+ro.config.vc_call_vol_steps=10
+sys.display-size=3840x2160
+vidc.enc.dcvs.extra-buff-count=2
+ro.media.enc.jpeg.quality=100
+ro.media.dec.jpeg.memcap=8000000
+ro.media.enc.hprof.vid.bps=8000000
+ro.media.capture.maxres=8m
+ro.media.panorama.defres=3264×1840
+ro.media.panorama.frameres=1280×720
+ro.camcorder.videoModes=true
+ro.media.enc.hprof.vid.fps=65
+ro.media.dec.aud.wma.enabled=1
+ro.media.dec.vid.wmv.enabled=1
+ro.media.dec.aud.mp3.enabled=1
+ro.media.dec.vid.mp4.enabled=1
+ro.media.enc.aud.wma.enabled=1
+ro.media.enc.vid.wmv.enabled=1
+ro.media.enc.aud.mp3.enabled=1
+ro.media.enc.vid.mp4.enabled=1
+ro.media.dec.aud.flac.enabled=1
+ro.media.dec.vid.H.264.enabled=1
+ro.media.enc.aud.flac.enabled=1
+ro.media.enc.vid.H.264.enabled=1
+
