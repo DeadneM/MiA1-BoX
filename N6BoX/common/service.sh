@@ -14,8 +14,8 @@ while true; do BOOT=$(getprop sys.boot_completed); if [ "$BOOT" -eq "1" ]; then 
 #Change lockscreen shortcut
 su -c settings put secure sysui_keyguard_left null
 su -c settings put secure sysui_keyguard_right null
-su -c settings put secure sysui_keyguard_left org.thunderdog.challegram/org.thunderdog.challegram.MainActivity
-su -c settings put secure sysui_keyguard_right com.snapchat.android/com.snap.mushroom.MainActivity
+#su -c settings put secure sysui_keyguard_left org.thunderdog.challegram/org.thunderdog.challegram.MainActivity
+#su -c settings put secure sysui_keyguard_right com.snapchat.android/com.snap.mushroom.MainActivity
 #Other misc settings changes
 # su -c settings put global stay_on_while_plugged_in 0
 su -c settings put global boot_count 8

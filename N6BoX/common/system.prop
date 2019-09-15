@@ -2,6 +2,9 @@
 # Example: Change dpi
 # ro.sf.lcd_density=320
 
+#NEXUS 6#
+persist.adb.notify=0
+
 # SMOOTH UI TWEAKS IS HERE ================================================//
 sys.use_fifo_ui=1
 debug.sf.latch_unsignaled=1
