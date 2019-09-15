@@ -8,6 +8,4 @@ MODDIR=${0%/*}
 
 # This script will be executed in post-fs-data mode
 
-#Disable backlight of hardware key
-echo "0" > /sys/class/leds/button-backlight/max_brightness
 
