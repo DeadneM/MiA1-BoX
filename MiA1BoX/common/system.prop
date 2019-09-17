@@ -59,8 +59,8 @@ persist.camera.stats.test=5
 persist.vendor.camera.stats.test=5
 
 # VIDEO AND AUDIO TWEAKS IS HERE ==========================================//
-ro.config.media_vol_steps=50
-ro.config.vc_call_vol_steps=10
+ro.config.media_vol_steps=30
+ro.config.vc_call_vol_steps=14
 sys.display-size=3840x2160
 vidc.enc.dcvs.extra-buff-count=2
 ro.media.enc.jpeg.quality=100
