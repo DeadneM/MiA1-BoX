@@ -18,8 +18,10 @@ pm disable com.miui.bugreport
 #Change lockscreen shortcut
 settings put secure sysui_keyguard_left null
 settings put secure sysui_keyguard_right null
-settings put secure sysui_keyguard_left org.thunderdog.challegram/org.thunderdog.challegram.MainActivity
-settings put secure sysui_keyguard_right com.snapchat.android/com.snap.mushroom.MainActivity
+# settings put secure sysui_keyguard_left org.thunderdog.challegram/org.thunderdog.challegram.MainActivity
+# settings put secure sysui_keyguard_right com.snapchat.android/com.snap.mushroom.MainActivity
+
+
 #Other misc settings changes
 # settings put global stay_on_while_plugged_in 0
 settings put global boot_count 8
