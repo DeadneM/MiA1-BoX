@@ -2,10 +2,11 @@
 #Zip log
 ZIPLOG=0
 #Path to root of git repo # Need to match current root of module maker path
-PATHGIT=/home/guest/Documents/MiA1BoX_ModuleMaker
+PATHGIT=~/Documents/MiA1-BoX
 #Name of module folder # you can add MOD(NUMBER) path
 MOD1=MiA1BoX
 MOD2=N6BoX
+MOD3=Pixel4aBoX
 #Name of module that is zipped # should stay null
 MODULEZIP=NULL
 
@@ -21,6 +22,8 @@ if [ $ZIPLOG -eq "1" ]; then echo "Current debug switch is on"; else if [ $ZIPLO
         echo "Type 1 for $MOD1"
 #MOD2
         echo "Type 2 for $MOD2"
+#MOD3
+        echo "Type 3 for $MOD3"
 ###IF YOU ADD MODULE TO ZIP ADD ENTRY HERE AND BELOW
 read -r choice
     case $choice in
@@ -47,6 +50,11 @@ read -r choice
     2)
         echo "---$MOD2 module selected---"
         MODULEZIP=$MOD2
+        Zipping
+    ;;
+    3)
+        echo "---$MOD3 module selected---"
+        MODULEZIP=$MOD3
         Zipping
     ;;
 ###IF YOU ADD MODULE TO ZIP ADD ENTRY HERE AND BELOW
