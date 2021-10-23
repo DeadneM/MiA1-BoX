@@ -25,7 +25,7 @@ settings put secure icon_blacklist rotate
 settings put secure low_priority 1
 
 # # # FORCE GPU COMPOSITION # # #
-while true; do SUFI=$(service list | grep -c "SurfaceFlinger"); if [ $SUFI -eq "1" ]; then sleep 3; break; else sleep 6; fi; done
+#while true; do SUFI=$(service list | grep -c "SurfaceFlinger"); if [ $SUFI -eq "1" ]; then sleep 3; break; else sleep 6; fi; done
 #service call SurfaceFlinger 1008 i32 1
-service call SurfaceFlinger 1008 i64 1
+#service call SurfaceFlinger 1008 i64 1
 
