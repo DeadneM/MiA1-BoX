@@ -1,0 +1,19 @@
+# This file will be read by resetprop
+# Example: Change dpi
+# ro.sf.lcd_density=320
+
+# # # BACKGROUND BLUR # # #
+ro.surface_flinger.supports_background_blur=1
+
+# # # HW RENDER Accepted values are "opengl", "skiagl", and vulkan" # # #
+debug.hwui.renderer=skiavk
+
+# # # UI TWEAKS # # #
+sys.use_fifo_ui=1
+debug.sf.latch_unsignaled=1
+debug.sf.disable_backpressure=1
+
+# # # VOLUME STEPS # # #
+ro.config.media_vol_steps=50
+ro.config.vc_call_vol_steps=14
+
