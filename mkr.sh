@@ -9,6 +9,7 @@ MOD2=N6BoX
 MOD3=Pixel4aBoX
 #Name of module that is zipped # should stay null
 MODULEZIP=NULL
+CONF=NULL
 
 ####################---Menu---#######################START
 menu() {
@@ -65,6 +66,8 @@ esac
 ####################---ZIP-FUNCTION---#######################START
 Zipping() {
 cd $PATHGIT
+CONF=$PATHGIT/$MODULEZIP/module.prop
+source $CONF
 if [ ! -d Releases/ ] | [ $(grep "$MODULEZIP") ]; then
 echo "Zipping $MODULEZIP Module files"
 else
@@ -75,19 +78,22 @@ cd $MODULEZIP
 echo "Starting Zipping..."
 if [ $ZIPLOG -eq "1" ]; then
 zip -9 -r -v -T ../$MODULEZIP.zip .
+mv ../$MODULEZIP.zip $PATHGIT/Releases/$MODULEZIP-V"$versionCode"-"$version".zip
 else if [ $ZIPLOG -eq "0" ]; then
 zip -9 -r -q -T ../$MODULEZIP.zip .
-fi
-fi
-echo "Finished Zipping..."
 mv ../$MODULEZIP.zip $PATHGIT/Releases/$MODULEZIP-$( date +"%d%m%y-%H%M%S" ).zip
+fi fi
+echo "Finished Zipping..."
 echo "Moving $MODULEZIP.zip into releases folder"
 cd ../..
 echo "Finished $MODULEZIP module zipping"
 echo "Look for $MODULEZIP into $PATHGIT/Releases"
-exit
 }
 ####################---ZIP-FUNCTION---#######################END
-
 menu
+if [ $ZIPLOG -eq "1" ]; then
+menu
+else if [ $ZIPLOG -eq "0" ]; then
+exit
+fi fi
 
