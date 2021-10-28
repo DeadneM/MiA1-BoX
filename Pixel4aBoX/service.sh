@@ -11,10 +11,7 @@ MODDIR=${0%/*}
 # # # WAIT TILL BOOT IS COMPLETE # # #
 while true; do BOOT=$(getprop sys.boot_completed); if [ "$BOOT" -eq "1" ]; then sleep 3; break; else sleep 6; fi; done
 
-#settings delete secure back_gesture_inset_scale_left
-#settings put secure back_gesture_inset_scale_left -1
-#settings delete secure back_gesture_inset_scale_right
-#settings put secure back_gesture_inset_scale_right -1
+settings put secure back_gesture_inset_scale_left -1 && settings put secure back_gesture_inset_scale_right -1
 #settings put global stay_on_while_plugged_in 0
 settings put global boot_count 8
 settings put global Phenotype_boot_count 8
