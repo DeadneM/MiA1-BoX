@@ -11,18 +11,14 @@ MODDIR=${0%/*}
 # # # WAIT TILL BOOT IS COMPLETE # # #
 while true; do BOOT=$(getprop sys.boot_completed); if [ "$BOOT" -eq "1" ]; then sleep 3; break; else sleep 6; fi; done
 
+#Disable Left and Right back gestures
 settings put secure back_gesture_inset_scale_left -1 && settings put secure back_gesture_inset_scale_right -1
-#settings put global stay_on_while_plugged_in 0
+#Reset the boot count for fun
 settings put global boot_count 8
 settings put global Phenotype_boot_count 8
 settings put secure low_power_manual_activation_count 8
-#settings put secure clock_seconds 1
-#settings put system status_bar_show_battery_percent 1
+#Blacklist only rotation icon
 settings put secure icon_blacklist rotate
+#Show low priority icons
 settings put secure low_priority 1
-
-# # # FORCE GPU COMPOSITION # # #
-#while true; do SUFI=$(service list | grep -c "SurfaceFlinger"); if [ $SUFI -eq "1" ]; then sleep 3; break; else sleep 6; fi; done
-#service call SurfaceFlinger 1008 i32 1
-#service call SurfaceFlinger 1008 i64 1
 

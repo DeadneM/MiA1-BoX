@@ -11,5 +11,6 @@ MODDIR=${0%/*}
 # # # WAIT TILL BOOT IS COMPLETE # # #
 while true; do BOOT=$(getprop sys.boot_completed); if [ "$BOOT" -eq "1" ]; then sleep 3; break; else sleep 6; fi; done
 
+#Restore back gesture on uninstallation
 settings delete secure back_gesture_inset_scale_left && settings delete secure back_gesture_inset_scale_right
 
