@@ -8,37 +8,35 @@ MODDIR=${0%/*}
 
 # This script will be executed in post-fs-data mode
 
-# # # DISABLE IOSTATS # # #
-echo "0" > /sys/block/sda/queue/iostats
-echo "0" > /sys/block/sdb/queue/iostats
-echo "0" > /sys/block/sdc/queue/iostats
-echo "0" > /sys/block/sdd/queue/iostats
-echo "0" > /sys/block/sde/queue/iostats
-echo "0" > /sys/block/sdf/queue/iostats
-echo "0" > /sys/block/dm-0/queue/iostats
-
 # # # SCHED TUNING # # #
 echo "0" > /proc/sys/kernel/sched_schedstats
 echo "1" > /proc/sys/kernel/sched_tunable_scaling
 #general
+echo "0" > /dev/stune/schedtune.boost
 echo "1" > /dev/stune/schedtune.prefer_high_cap
 echo "1" > /dev/stune/schedtune.prefer_idle
 #background
+echo "0" > /dev/stune/background/schedtune.boost
 echo "1" > /dev/stune/background/schedtune.prefer_high_cap
 echo "1" > /dev/stune/background/schedtune.prefer_idle
 #foreground
+echo "0" > /dev/stune/foreground/schedtune.boost
 echo "1" > /dev/stune/foreground/schedtune.prefer_high_cap
 echo "1" > /dev/stune/foreground/schedtune.prefer_idle
 #top-app
+echo "0" > /dev/stune/top-app/schedtune.boost
 echo "1" > /dev/stune/top-app/schedtune.prefer_high_cap
 echo "1" > /dev/stune/top-app/schedtune.prefer_idle
 #camera-daemon
+echo "0" > /dev/stune/camera-daemon/schedtune.boost
 echo "1" > /dev/stune/camera-daemon/schedtune.prefer_high_cap
 echo "1" > /dev/stune/camera-daemon/schedtune.prefer_idle
 #nnapi-hal
+echo "0" > /dev/stune/nnapi-hal/schedtune.boost
 echo "1" > /dev/stune/nnapi-hal/schedtune.prefer_high_cap
 echo "1" > /dev/stune/nnapi-hal/schedtune.prefer_idle
 #rt
+echo "0" > /dev/stune/rt/schedtune.boost
 echo "1" > /dev/stune/rt/schedtune.prefer_high_cap
 echo "1" > /dev/stune/rt/schedtune.prefer_idle
 
