@@ -1,13 +1,8 @@
 #!/system/bin/sh
-# Do NOT assume where your module will be located.
-# ALWAYS use $MODDIR if you need to know where this script
-# and module is placed.
-# This will make sure your module will still work
-# if Magisk change its mount point in the future
 MODDIR=${0%/*}
 
-# This script will be executed in late_start service mode
-
+# # # WAIT TILL BOOT IS COMPLETE # # #
+while true; do BOOT=$(getprop sys.boot_completed); if [ '$BOOT' -eq '1' ]; then sleep 3; break; else sleep 9; fi; done
 # # # KERNEL SCHED # # #
 echo '0' > /proc/sys/kernel/sched_schedstats && chmod 0444 /proc/sys/kernel/sched_schedstats
 echo '1' > /proc/sys/kernel/sched_tunable_scaling && chmod 0444 /proc/sys/kernel/sched_tunable_scaling
@@ -51,8 +46,6 @@ echo '1' > /dev/stune/rt/schedtune.prefer_idle && chmod 0444 /dev/stune/rt/sched
 echo '0-2,5' > /dev/cpuset/restricted/cpus && chmod 0444 /dev/cpuset/restricted/cpus
 #system background
 echo '0-2,5' > /dev/cpuset/system-background/cpus && chmod 0444 /dev/cpuset/system-background/cpus
-# # # WAIT TILL BOOT IS COMPLETE # # #
-while true; do BOOT=$(getprop sys.boot_completed); if [ '$BOOT' -eq '1' ]; then sleep 3; break; else sleep 9; fi; done
 # # # CUSTOM SYSTEM UI SETTINGS # # #
 #Disable Left and Right back gestures
 settings put secure back_gesture_inset_scale_left -1 && settings put secure back_gesture_inset_scale_right -1
