@@ -23,12 +23,12 @@ echo '0-7' > /dev/cpuset/cpus; chmod 0444 /dev/cpuset/cpus
 echo '0' > /dev/stune/background/schedtune.boost; chmod 0444 /dev/stune/background/schedtune.boost
 echo '0' > /dev/stune/background/schedtune.prefer_high_cap; chmod 0444 /dev/stune/background/schedtune.prefer_high_cap
 echo '1' > /dev/stune/background/schedtune.prefer_idle; chmod 0444 /dev/stune/background/schedtune.prefer_idle
-echo '0-2,5' > /dev/cpuset/background/cpus; chmod 0444 /dev/cpuset/background/cpus
+echo '3-5' > /dev/cpuset/background/cpus; chmod 0444 /dev/cpuset/background/cpus
 #foreground
 echo '0' > /dev/stune/foreground/schedtune.boost; chmod 0444 /dev/stune/foreground/schedtune.boost
 echo '0' > /dev/stune/foreground/schedtune.prefer_high_cap; chmod 0444 /dev/stune/foreground/schedtune.prefer_high_cap
 echo '1' > /dev/stune/foreground/schedtune.prefer_idle; chmod 0444 /dev/stune/foreground/schedtune.prefer_idle
-echo '0-2,5' > /dev/cpuset/foreground/cpus; chmod 0444 /dev/cpuset/foreground/cpus
+echo '0-5' > /dev/cpuset/foreground/cpus; chmod 0444 /dev/cpuset/foreground/cpus
 #top-app
 echo '0' > /dev/stune/top-app/schedtune.boost; chmod 0444 /dev/stune/top-app/schedtune.boost
 echo '0' > /dev/stune/top-app/schedtune.prefer_high_cap; chmod 0444 /dev/stune/top-app/schedtune.prefer_high_cap
@@ -48,9 +48,9 @@ echo '0' > /dev/stune/rt/schedtune.boost; chmod 0444 /dev/stune/rt/schedtune.boo
 echo '0' > /dev/stune/rt/schedtune.prefer_high_cap; chmod 0444 /dev/stune/rt/schedtune.prefer_high_cap
 echo '1' > /dev/stune/rt/schedtune.prefer_idle; chmod 0444 /dev/stune/rt/schedtune.prefer_idle
 #restricted
-echo '0-2,5' > /dev/cpuset/restricted/cpus; chmod 0444 /dev/cpuset/restricted/cpus
+echo '0-2' > /dev/cpuset/restricted/cpus; chmod 0444 /dev/cpuset/restricted/cpus
 #system background
-echo '0-2,5' > /dev/cpuset/system-background/cpus; chmod 0444 /dev/cpuset/system-background/cpus
+echo '0-2' > /dev/cpuset/system-background/cpus; chmod 0444 /dev/cpuset/system-background/cpus
 # # # CUSTOM SYSTEM UI SETTINGS # # #
 #Disable Left and Right back gestures
 settings put secure back_gesture_inset_scale_left -1; settings put secure back_gesture_inset_scale_right -1
@@ -60,8 +60,3 @@ settings put secure back_gesture_inset_scale_left -1; settings put secure back_g
 settings put secure icon_blacklist rotate
 #Show low priority icons
 settings put secure low_priority 1
-#Reset the boot count for fun
-settings put global boot_count 8
-settings put global Phenotype_boot_count 8
-settings put secure low_power_manual_activation_count 8
-
