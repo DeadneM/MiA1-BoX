@@ -23,7 +23,7 @@ echo '0-7' > /dev/cpuset/cpus; chmod 0444 /dev/cpuset/cpus
 echo '0' > /dev/stune/background/schedtune.boost; chmod 0444 /dev/stune/background/schedtune.boost
 echo '0' > /dev/stune/background/schedtune.prefer_high_cap; chmod 0444 /dev/stune/background/schedtune.prefer_high_cap
 echo '1' > /dev/stune/background/schedtune.prefer_idle; chmod 0444 /dev/stune/background/schedtune.prefer_idle
-echo '3-5' > /dev/cpuset/background/cpus; chmod 0444 /dev/cpuset/background/cpus
+echo '4-5' > /dev/cpuset/background/cpus; chmod 0444 /dev/cpuset/background/cpus
 #foreground
 echo '0' > /dev/stune/foreground/schedtune.boost; chmod 0444 /dev/stune/foreground/schedtune.boost
 echo '0' > /dev/stune/foreground/schedtune.prefer_high_cap; chmod 0444 /dev/stune/foreground/schedtune.prefer_high_cap
@@ -48,15 +48,7 @@ echo '0' > /dev/stune/rt/schedtune.boost; chmod 0444 /dev/stune/rt/schedtune.boo
 echo '0' > /dev/stune/rt/schedtune.prefer_high_cap; chmod 0444 /dev/stune/rt/schedtune.prefer_high_cap
 echo '1' > /dev/stune/rt/schedtune.prefer_idle; chmod 0444 /dev/stune/rt/schedtune.prefer_idle
 #restricted
-echo '0-2' > /dev/cpuset/restricted/cpus; chmod 0444 /dev/cpuset/restricted/cpus
+echo '2-3' > /dev/cpuset/restricted/cpus; chmod 0444 /dev/cpuset/restricted/cpus
 #system background
-echo '0-2' > /dev/cpuset/system-background/cpus; chmod 0444 /dev/cpuset/system-background/cpus
-# # # CUSTOM SYSTEM UI SETTINGS # # #
-#Disable Left and Right back gestures
-settings put secure back_gesture_inset_scale_left -1; settings put secure back_gesture_inset_scale_right -1
-#Restore Left and Right back gestures
-# settings delete secure back_gesture_inset_scale_left; settings delete secure back_gesture_inset_scale_right
-#Blacklist only rotation icon
-settings put secure icon_blacklist rotate
-#Show low priority icons
-settings put secure low_priority 1
+echo '2-3' > /dev/cpuset/system-background/cpus; chmod 0444 /dev/cpuset/system-background/cpus
+
